@@ -192,6 +192,15 @@
     }
 }
 
+@media (max-width: 769px){
+
+    .pm-nav__link {
+        font-size: 0.5rem; /* Reduce font size for mobile */
+    }
+}
+
+
+
 /* Ajustes de contenido */
 body {
     padding-top: 60px; /* Altura del header */
