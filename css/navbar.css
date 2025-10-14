@@ -195,7 +195,11 @@
 @media (max-width: 769px){
 
     .pm-nav__link {
-        font-size: 0.6rem; /* Reduce font size for mobile */
+        font-size: 0.8rem; /* Reduce font size for mobile */
+    }
+
+    .pm-nav__list{
+        margin-top: -4% !important;
     }
 }
 
