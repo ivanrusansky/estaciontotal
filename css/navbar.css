@@ -195,7 +195,7 @@
 @media (max-width: 769px){
 
     .pm-nav__link {
-        font-size: 0.5rem; /* Reduce font size for mobile */
+        font-size: 0.6rem; /* Reduce font size for mobile */
     }
 }
 
