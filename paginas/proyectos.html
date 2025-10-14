@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrimensor Parral-Messina - Proyectos</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=manrope@900,700,500,400&display=swap" rel="stylesheet">
+    <link rel="icon" href="../img/logo final parral-messina.jpg" type="image/jpeg">
+    <style>
+        /* Estilos específicos para el carrusel */
+        .carousel-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+            aspect-ratio: 16/9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f8f8f8;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.322);
+            color: rgb(221, 221, 221);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(0, 0, 0, 0.623);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-btn {
+            left: 20px;
+        }
+
+        .next-btn {
+            right: 20px;
+        }
+
+        .project-description {
+            margin-top: var(--space-xl);
+            padding: var(--space-lg);
+            background: #f5f5f5;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <header class="pm-header">
+        <input type="checkbox" id="pm-toggle" class="pm-toggle">
+        <label for="pm-toggle" class="pm-toggle__label">
+            <span class="pm-toggle__icon"></span>
+        </label>
+        <nav class="pm-nav">
+            <ul class="pm-nav__list">
+                <li class="pm-nav__item"><a class="pm-nav__link" href="../index.html">Inicio</a></li>
+                <li class="pm-nav__item"><a class="pm-nav__link" href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li class="pm-nav__item"><a class="pm-nav__link" href="cuando-agrimensor.html">¿cuándo se necesita un agrimensor?</a></li>
+                <li class="pm-nav__item"><a class="pm-nav__link" href="equipo.html">Equipo</a></li>
+                <li class="pm-nav__item"><a class="pm-nav__link" href="herramientas.html">Herramientas Clave</a></li>
+                <li class="pm-nav__item"><a class="pm-nav__link" href="servicios.html">Servicios</a></li>
+                <li class="pm-nav__item"><a class="pm-nav__link" href="cobertura.html">Zona de Cobertura</a></li>
+                <li class="pm-nav__item"><a class="pm-nav__link" href="proyectos.html">Proyectos</a></li>
+                <li class="pm-nav__item"><a class="pm-nav__link" href="clientes.html">Clientes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Proyectos Destacados</h2>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-slide">
+                        <img src="../img/proyecto 1.jpg" alt="Proyecto 1 - Nordelta">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="../img/proyecto 2.jpg" alt="Proyecto 2 - Santa Bárbara">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="../img/proyecto 3.jpg" alt="Proyecto 3 - Los Pilares">
+                    </div>
+                </div>
+                <button class="carousel-btn prev-btn">&#10094;</button>
+                <button class="carousel-btn next-btn">&#10095;</button>
+            </div>
+
+            <div class="project-description">
+                <h3>Barrios Cerrados: Nordelta y Santa Bárbara</h3>
+                <p>En estos prestigiosos desarrollos residenciales, nuestro equipo ha llevado a cabo trabajos de agrimensura de alta precisión, incluyendo:</p>
+                <ul>
+                    <li>Mensuras para constitución de estados parcelarios, garantizando la correcta delimitación y registro de cada propiedad.</li>
+                    <li>Implementación de Decretos 947, asegurando el cumplimiento normativo y la documentación legal necesaria.</li>
+                    <li>Relevamientos topográficos detallados para una precisa determinación de límites y superficies.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Agrimensura Parral-Messina. Todos los derechos reservados.</p>
+        <p>Contáctenos: <a href="https://wa.me/5491133764605" target="_blank">11-3376-4605</a> | <a href="https://www.instagram.com/agrimensuraparral/?hl=es" target="_blank">@agrimensuraparral</a></p>
+    </footer>
+
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        
+        let currentIndex = 0;
+        
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        
+        prevBtn.addEventListener('click', () => {
+            currentIndex = currentIndex > 0 ? currentIndex - 1 : slides.length - 1;
+            updateCarousel();
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            currentIndex = currentIndex < slides.length - 1 ? currentIndex + 1 : 0;
+            updateCarousel();
+        });
+        
+        // Auto-advance carousel every 5 seconds
+        setInterval(() => {
+            currentIndex = currentIndex < slides.length - 1 ? currentIndex + 1 : 0;
+            updateCarousel();
+        }, 5000);
+    </script>
+</body>
+</html>

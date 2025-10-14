@@ -36,7 +36,7 @@
 .pm-nav__item {
     border-bottom: 1px solid #000;
     margin: 0;
-    padding: 3.5%;
+    padding: 1.6%;
     width: 100%;
 }
 
@@ -146,7 +146,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 2.5rem;
+        gap: 1.8rem;
         padding: 0;
         height: 60px;
         max-width: 1200px;

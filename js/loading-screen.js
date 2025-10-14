@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!hasSeenLoading) {
         // First visit: show loading screen
         document.body.classList.add('loading');
-        // Show loading screen for 3.5s, then fade out for 0.5s (total 4s)
+        loadingScreen.style.display = 'flex'; // Ensure loading screen is visible
+        // Show loading screen for 4 seconds, then fade out for 0.5s (total 4.5s)
         setTimeout(function() {
             loadingScreen.classList.add('fade-out');
             document.body.classList.remove('loading');
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
                 loadingScreen.remove();
             }, 500); // fade-out duration
-        }, 3500); // visible duration before fade-out
+        }, 4000); // visible duration before fade-out
     } else {
         // Not first visit: skip loading screen
         loadingScreen.style.display = 'none';
