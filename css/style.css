@@ -7,6 +7,127 @@
     --space-lg: 1.5rem;
     --space-xl: 2rem;
     --space-2xl: 3rem;
+    
+    /* Colors */
+    --color-primary: #252525;
+    --color-background: #ffffff;
+    --color-text: #252525;
+    --color-text-light: #666;
+}
+
+/* Hero Section Styles */
+.hero-section {
+    padding: var(--space-2xl) 0;
+    background-color: var(--color-background);
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+    text-align: center;
+}
+
+.hero-logo {
+    max-width: 400px;
+    margin: 0 auto var(--space-xl);
+}
+
+.hero-logo img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-md);
+    color: var(--color-primary);
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-xl);
+    color: var(--color-text);
+}
+
+.cta-button {
+    margin-top: var(--space-xl);
+}
+
+/* Team Action Section */
+.team-action-section {
+    padding: var(--space-2xl) 0;
+}
+
+/* Recognition Section */
+.recognition-section {
+    padding: var(--space-2xl) 0;
+    background-color: var(--color-background);
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+/* Estilos específicos para PC */
+@media (min-width: 1024px) {
+    /* Control de ancho de contenido para textos */
+    main section p, 
+    main section ul {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 var(--space-2xl);
+    }
+
+    /* Control de ancho para imágenes (excepto equipo y logo) */
+    .herramientas-main .hero-img-container {
+        max-width: 700px !important;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: var(--space-2xl);
+        padding-right: var(--space-2xl);
+        box-sizing: border-box;
+    }
+    .herramientas-main .img-fullwidth {
+        width: 100%;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    /* Ajuste de márgenes para secciones */
+    main section {
+        margin-bottom: var(--space-2xl);
+        padding: var(--space-xl) 0;
+    }
+
+    /* Ajuste de títulos */
+    main section h1,
+    main section h2,
+    main section h3 {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 var(--space-2xl);
+        margin-bottom: var(--space-xl);
+        text-align: center;
+    }
+}
+
+.recognition-section h2 {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    font-size: 2rem;
+    color: var(--color-primary);
 }
 
 /* Reset básico y estilos generales */
@@ -35,6 +156,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.team-member div strong {
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-bottom: 0;
+    display: block;
 }
 
 .team-list {
@@ -73,6 +201,60 @@
     height: auto;
     object-fit: cover;
     margin-bottom: var(--space-lg);
+}
+
+/* Ajustes específicos para PC */
+@media (min-width: 1024px) {
+    .img-fullwidth:not(.team-member-img):not(.hero-logo img) {
+        max-height: 500px;
+        object-fit: contain;
+    }
+
+    /* Container específico para imágenes en PC */
+    .hero-img-container:not(.team-member):not(.hero-logo) {
+        position: relative;
+        width: 80%;
+        max-width: 1000px;
+        margin: var(--space-2xl) auto;
+        padding: 0 var(--space-2xl);
+    }
+
+    /* Contenido general para PC */
+    .content-block {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: var(--space-xl) var(--space-2xl);
+    }
+
+    /* Estilos específicos para la página de herramientas */
+    .herramientas-main {
+        padding: var(--space-2xl) 0;
+    }
+
+    .herramientas-main .content-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 var(--space-2xl);
+    }
+
+    .herramientas-main h1,
+    .herramientas-main h2 {
+        text-align: center;
+        max-width: 800px;
+        margin: var(--space-xl) auto;
+    }
+
+    .herramientas-main .intro-text,
+    .herramientas-main p {
+        max-width: 700px;
+        margin: var(--space-xl) auto;
+        line-height: 1.8;
+        font-size: 1.1rem;
+    }
+
+    .herramientas-main section {
+        margin: var(--space-2xl) auto;
+    }
 }
 
 /* Estilos generales */
@@ -148,6 +330,34 @@ li {
 
     main {
         padding: var(--space-md);
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .hero-logo {
+        max-width: 100%;
+        padding: 0 var(--space-md);
+    }
+
+    .hero-section,
+    .team-action-section,
+    .recognition-section {
+        padding: var(--space-xl) 0;
+    }
+
+    .recognition-section h2 {
+        font-size: 1.5rem;
+        padding: 0 var(--space-md);
+    }
+
+    .section-content {
+        padding: 0 var(--space-md);
     }
 }
 
